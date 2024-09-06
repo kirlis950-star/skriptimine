@@ -1,0 +1,19 @@
+#!/bin/bash
+# See skript väljastab kuupäeva, kellaaja ja kalendriga seotud info.
+
+# Kontrollib, kas sõltuvused on installitud; kui ei, siis installi vaikselt
+if ! command -v ncal &> /dev/null
+then
+    echo "ncal paketti ei leitud, installin..."
+    sudo apt-get install -y ncal > /dev/null 2>&1
+fi
+
+
+# Väljasta kuupäev ja kellaaeg
+echo "Today is $(date +"%A, %B %d, %Y")"
+echo "Time is $(date +"%H:%M")"
+
+# Väljasta praeguse kuu kalender
+echo
+cal
+
