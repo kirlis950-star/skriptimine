@@ -5,7 +5,8 @@
 echo -n "Tere, "
 
 # 2. Tekita kasutaja nimi vastava käsu kombinatsiooni(de) abil ning väljasta ta reavahetuseta
-echo -n "$(whoami)"
+username=$(whoami)
+echo -n "$(echo ${username^})"
 
 # 3. Väljasta „!“ reavahetusega
 echo "!"
