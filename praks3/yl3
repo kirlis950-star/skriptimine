@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "Sisestage ainepunktide arv: "
+read ainepunktide_arv
+echo "Sisestage nädalate arv: "
+read nadalate_arv
+aeg=`echo "scale=1;$ainepunktide_arv*26/$nadalate_arv" | bc`
+aeg_ymardada=`echo "($aeg+0.9)/1" | bc`
+echo $aeg_ymardada
