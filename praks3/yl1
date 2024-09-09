@@ -1,0 +1,9 @@
+#!/bin/bash
+# User variables
+#sisesta andmed
+echo -n "Sisesta oma ees- ja perenimi: "
+
+#loe
+read eesnimi perenimi
+#pane kirja kasutaja poolt kirjutatud seadeldis
+echo Sinu eesnimi on $eesnimi ja perenimi on $perenimi
