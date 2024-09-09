@@ -1,0 +1,14 @@
+#!/bin/bash
+#mitu reisijad
+echo "mitu reisijaid on ühes grupis: "
+read mitu_reisijaid
+#mitu kohti
+echo "mitu kohti on ühes bussis: "
+read mitu_kohti
+#arvuta täisbuss ja mahajääja
+
+taidetud_bussid=$((mitu_reisijaid / mitu_kohti))
+maha_jaanud_reisijad=$((mitu_reisijaid % mitu_kohti))
+
+echo "busse täideti täielikult: $taidetud_bussid"
+echo "Maha jääb $maha_jaanud_reisijad reisija"
