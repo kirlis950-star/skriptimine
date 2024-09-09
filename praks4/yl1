@@ -1,0 +1,11 @@
+#!/bin/bash
+#Sisend
+echo -n "Sisesta täisarv: "
+read arv
+#kas paaris või paaritu
+if [ $(($arv % 2)) -eq 0 ]; then
+  echo "Antud arv on paaris"
+else
+  echo "Antud arv on paaritu"
+fi
+
