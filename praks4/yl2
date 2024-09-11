@@ -1,0 +1,17 @@
+#!/bin/bash
+#sisend
+echo -n "Sisesta reisijate arv: "
+read reisijad
+echo -n "Sisesta kohtade arv bussis: "
+read kohad
+#jagab
+
+bussid=$(($reisijad / $kohad))
+#if kui palju vaja läheb
+
+if [ $(($reisijad % $kohad)) -ne 0 ]; then
+  bussid=$(($bussid + 1))
+fi
+
+echo "vaja oleks $bussid bussi"
+
