@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#kui kasutad ilma argumendita
+if [ $# -ne 1 ]; then
+  echo "Palun käivita skript ühe täisarvuga, nt: ./paarsus 3"
+  exit 1
+fi
+#mis argumendi järjekorras see on
+arv=$1
+
+if ! [[ $arv =~ ^-?[0-9]+$ ]]; then
+  echo "Palun sisesta täisarv"
+  exit 1
+fi
+#kui panid argumendi
+if [ $(($arv % 2)) -eq 0 ]; then
+  echo "Antud arv on paaris"
+else
+  echo "Antud arv on paaritu"
+fi
+
