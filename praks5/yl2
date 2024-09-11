@@ -1,0 +1,22 @@
+#!/bin/bash
+#sisend kuunumbri kohta
+echo -n "Sisesta kuu number (1-12): "
+read kuu
+#vaatab, mis vahemikku see jääb
+if [ $kuu -eq 12 -o $kuu -eq 1 -o $kuu -eq 2 ]; then
+echo "Praegu on talv"
+
+elif [ $kuu -ge 3 -a $kuu -le 5 ]; then
+echo "Praegu on kevad"
+
+elif [ $kuu -ge 6 -a $kuu -le 8 ]; then
+echo "Praegu on suvi"
+
+elif [ $kuu -ge 9 -a $kuu -le 11 ]; then
+echo "Praegu on sügis"
+
+else
+#kui paned rohkem, kui 12
+echo "Sellist numbrit kuus ei eksisteeri"
+fi
+
