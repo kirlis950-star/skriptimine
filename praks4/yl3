@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#küsib valikut
+echo "1. Unix (Sun Os)"
+echo "2. Linux (Red Hat)"
+echo -n "Vali oma OS [1 või 2]: "
+read osop
+#vastab numbriga
+if [ $osop -eq 1 ]; then
+  echo "Sa valisid Unix (Sun Os)"
+else
+  if [ $osop -eq 2 ]; then
+    echo "Sa valisid Linux (Red Hat)"
+  else
+    echo "Sa ei valinud Unixit ega Linuxit."
+  fi
+fi
+
