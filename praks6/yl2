@@ -1,0 +1,18 @@
+#!/bin/bash
+# Skript arvutab sisestatud täisarvu numbrite summa
+
+#kasutajalt küsib täisarvu
+echo -n "Sisesta suvaline täisarv: "
+#ta võtab arvu
+read arv
+#arvutab
+summa=0
+arv=$(echo $arv | sed 's/-//')  # Eemalda võimalik miinusmärk
+while [ $arv -gt 0 ]; do
+  number=$((arv % 10)) #viimane number koos jäägiga
+  summa=$((summa + number)) #liitmine
+  arv=$((arv / 10)) #jagamine
+done
+#ütleb, mis summa on
+echo "Arvu numbrite summa on: $summa"
+
