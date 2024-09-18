@@ -1,0 +1,26 @@
+#!/bin/bash
+# Skript väljastab kujundi, kus esimene ja viimane rida on täis tärne, keskel tärnid ja tühikud
+
+echo -n "Sisesta ridade arv: "
+read read
+
+echo -n "Sisesta tärnide arv reas: "
+read tarnid
+
+for (( i = 1; i <= $read; i++ )); do
+  if [ $i -eq 1 ] || [ $i -eq $read ]; then
+    # Esimene ja viimane rida: ainult tärnid
+    for (( j = 1; j <= $tarnid; j++ )); do
+      echo -n "* "
+    done
+  else
+    # Keskmised read: tärn alguses ja lõpus, keskel tühikud
+    echo -n "* "
+    for (( j = 2; j < $tarnid; j++ )); do
+      echo -n "  "
+    done
+    echo -n "*"
+  fi
+  echo ""
+done
+
