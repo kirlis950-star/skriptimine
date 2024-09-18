@@ -1,0 +1,13 @@
+#!/bin/bash
+# Skript väljastab kujundi, kus igal real on järjest rohkem tärne
+
+echo -n "Sisesta ridade arv: "
+read read
+
+for (( i = 1; i <= $read; i++ )); do #read
+  for (( j = 1; j <= $i; j++ )); do #tärnid
+    echo -n "* "
+  done
+  echo ""
+done
+
