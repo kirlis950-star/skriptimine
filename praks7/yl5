@@ -1,0 +1,16 @@
+#!/bin/bash
+# Skript väljastab kujundi, kus "o" sümbolid asenduvad tärnidega
+
+echo -n "Sisesta ridade arv: "
+read read
+
+for (( i = 1; i <= $read; i++ )); do
+  for (( j = 1; j <= $((read-i)); j++ )); do
+    echo -n "o "
+  done
+  for (( j = $((read-i+1)); j <= $read; j++ )); do
+    echo -n "* "
+  done
+  echo ""
+done
+
