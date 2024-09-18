@@ -1,0 +1,16 @@
+#!/bin/bash
+# Skript väljastab kujundi kasutaja sisestatud ridade ja tärnide arvuga
+
+echo -n "Sisesta ridade arv: "
+read read
+
+echo -n "Sisesta tärnide arv reas: "
+read tarnid
+
+for (( i = 1; i <= $read; i++ )); do #loeb ridasid
+  for (( j = 1; j <= $tarnid; j++ )); do #loeb  tärne
+    echo -n "* " #et oleks ikka tärne
+  done
+  echo "" #kui sinna ei kuulu
+done
+
