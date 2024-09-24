@@ -6,21 +6,20 @@ failid=0
 kataloogid=0
 linkid=0
 
-
 read kataloog
 
- for i in "$kataloog"/*
- do
-   if test -f $i; then
-     echo $i: fail
-     failid=$((failid + 1))
- elif test -L $i; then
-     echo $i: link
-     kataloogid=$((kataloogid + 1))
- elif test -d $i; then
-     echo $i: kataloog
-     linkid=$((linkid + 1))
- fi
- done
+for i in "$kataloog"*
+do
+  if [ -f "$i" ]; then
+    echo "$i: fail"
+    failid=$((failid + 1))
+  elif [ -L "$i" ]; then
+    echo "$i: link"
+    linkid=$((linkid + 1))
+  elif [ -d "$i" ]; then
+    echo "$i: kataloog"
+    kataloogid=$((kataloogid + 1))
+  fi
+done
 
 echo "Kokku on $failid faili, $kataloogid kataloogi ja $linkid linki."
