@@ -1,0 +1,15 @@
+#!/bin/bash
+#renee
+#kujund
+#Teeb mingisuguse poolnurga
+
+echo -n "Sisesta ridade arv: "
+read read
+
+for (( i = $read; i >= 1; i-- )); do
+  for (( j = 1; j <= $i; j++ )); do
+    echo -n "* "
+  done
+  echo ""
+done
+
