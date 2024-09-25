@@ -1,0 +1,32 @@
+#!/bin/bash
+#renee
+#kujund2
+#teeb kolmnurga, aga jääb vahele
+
+
+echo -n "Sisesta ridade arv: "
+read read
+
+for ((i=0; i<read; i++)); do
+    # Esimene pool (vasakpoolne kolmnurk)
+    for ((j=0; j<read-i; j++)); do
+        echo -n "* "
+    done
+    
+    # Tühik kahe poole vahel
+    for ((k=0; k<2*i; k++)); do
+        echo -n "  "
+    done
+    
+    # Teine pool (parempoolne kolmnurk)
+    for ((j=0; j<read-i; j++)); do
+        if ((j == read-i-1)); then
+            echo "*"  # Viimane täht ilma tühikuta
+        else
+            echo -n "* "
+        fi
+    done
+    
+    # Uus rida pole vajalik, sest viimane 'echo' juba lisab selle
+done
+
