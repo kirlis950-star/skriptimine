@@ -1,0 +1,25 @@
+#!/bin/bash
+#renee
+#menu
+#skript annab valida menüü ja prindib söögikirjeldust
+
+echo "1. liha ja kartulid"
+echo "2. kala ja krõpsud"
+echo "3. kala ja krõpsud"
+echo -n "Tee oma valik (1 või 2 või 3): "
+read osop
+#vastab numbriga
+if [ $osop -eq 1 ]; then
+  echo "Väga maitsev, aga jälgi oma tervist!"
+  echo "Head isu!"
+else
+  if [ $osop -eq 2 ]; then
+    echo "Brititoit on maisev!"
+    echo "Head isu!"
+  elif [ $osop -eq 3 ]; then
+    echo "Nii tervislik ja igav..."
+    echo "Head isu!"
+  else
+    echo "See ei olnud valikus"
+  fi
+fi
