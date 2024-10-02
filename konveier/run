@@ -24,7 +24,7 @@ cat inimesed | tr '[:upper:]' '[:lower:]' | cut -d ',' -f1 | cut -d ':' -f2 > ko
 #perekonnanimi väikse tähega
 cat inimesed | tr '[:upper:]' '[:lower:]' | cut -d ':' -f2 | cut -d ';' -f1 | cut -d ',' -f2 | cut -d ' ' -f2 > konveier/perenimed
 
-cat inimesed | paste -d '.' konveier/eesnimed konveier/perenimed > konveier/kasutajad
+cat inimesed | paste -d '.' konveier/perenimed konveier/eesnimed > konveier/kasutajad
 
 cat inimesed | paste -d '.' konveier/kasutajad | paste -d '@' konveier/kasutajad konveier/domeenid > konveier/meilid
 
