@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Kontrollime, kas fail on olemas
+if [ ! -f inimesed ]; then
+  echo "Faili 'inimesed' ei leitud. Veendu, et fail 'inimesed' on praeguses kataloogis."
+  exit 1
+fi
+
+#teeb kaustu
+mkdir -p konveier
+
+#eesnimi
+cat inimesed | cut -f2 -d" " | cut -f1 -d";" > konveier/eesnimed
+
+#perenimed
+cat inimesed | cut -d ':' -f2 | cut -d ';' -f1 | cut -d ',' -f2 | cut -d ' ' -f2 > konveier/perenimed
+
+#domeen
+cut -d '-' -f2 inimesed > konveier/domeenid
+
+#eesnimi väikse tähega
+cat inimesed | tr '[:upper:]' '[:lower:]' | cut -d ',' -f1 | cut -d ':' -f2 > konveier/eesnimed
+
+#perekonnanimi väikse tähega
+cat inimesed | tr '[:upper:]' '[:lower:]' | cut -d ':' -f2 | cut -d ';' -f1 | cut -d ',' -f2 | cut -d ' ' -f2 > konveier/perenimed
+
+cat inimesed | paste -d '.' konveier/eesnimed konveier/perenimed > konveier/kasutajad
+
+cat inimesed | paste -d '.' konveier/kasutajad | paste -d '@' konveier/kasutajad konveier/domeenid > konveier/meilid
+
+echo "Kasutajad salvestatud faili: konveier/kasutajad"
+echo "Meilid salvestatud faili: konveier/meilid"
+
+
